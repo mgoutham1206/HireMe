@@ -2,21 +2,35 @@
 //  AppDelegate.swift
 //  HireMe
 //
-//  Created by Thammanaboina,Srinivas on 10/14/15.
-//  Copyright (c) 2015 Thammanaboina,Srinivas. All rights reserved.
+//  Created by A Team on 11/15/15.
+//  Copyright (c) 2015 A Team. All rights reserved.
 //
 
 import UIKit
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var jobtitle : String = ""
+    var jobDescription : String = ""
+    
 
+   
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // Override point for customization after application launch.        
+        
+        
+        ParseConfig()
+        
+        let userName:String? =  NSUserDefaults.standardUserDefaults().stringForKey("userEmail")       
+       
+
         return true
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
